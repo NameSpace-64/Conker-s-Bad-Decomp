@@ -209,7 +209,36 @@ u16 *func_15001DE0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
 // 3 loops
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002008.s")
 #pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002248.s")
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002560.s")
+
+void func_15002560(struct262* arg0, struct262* arg1) {
+    s32 var_v0;
+    struct262* temp_s0;
+    struct262* var_s1;
+
+    while(TRUE){
+        if (arg0 == NULL){
+        break;
+        }
+        if (arg0->unk4 == 0) {
+            if (arg1 != NULL) {
+             var_v0 = (uintptr_t)arg1 - (uintptr_t)arg0;
+            } else {
+             var_v0 = 0;
+            }
+            arg0->unk4 = var_v0;
+        }
+        var_s1 = (uintptr_t)arg0 + arg0->unkC;
+        if (arg0->unkC == 0) {
+            break;
+        }
+            while (var_s1->unk4 != 0) {
+                    temp_s0 = (uintptr_t)var_s1 + var_s1->unk4;
+                    func_15002560(var_s1, temp_s0);
+                    var_s1 = temp_s0;
+            }
+            arg0 = var_s1;
+    }
+}
 
 void func_150025FC(void) {
     s32 tmp0;
@@ -246,10 +275,42 @@ void func_15002724(s32 arg0) {
     D_800DBE38 += func_150027F8(arg0);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_15002754.s")
+void func_15002754(void) {
+    D_800B0DC0 = ALIGN4(D_800B0DC0);
+    D_800DBDD8[D_800DBE50] = D_800B0DC0;
+    D_800B0DC0 += D_800DBE38 * 12;
+    D_800DBDE8[D_800DBE50] = D_800B0DC0;
+    D_800B0DC0 += D_800DBE38 * 8;
+    D_800DBDF8[D_800DBE50] = D_800B0DC0;
+    D_800B0DC0 += D_800DBE38 * 4;
+    func_1510F800(D_800DBE50, D_800DBE50 * 4, D_800DBE38);
+    D_800DBE38 = 0;
+}
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/game_2DF70/func_150027F8.s")
+s32 func_150027F8(struct234 *arg0) {
+    s32 var_v0;
+    s32 ret;
+    s32 i;
+    
+    if (arg0 == NULL) {
+        return 0;
+    }
+    
+    var_v0 = 0;
+    ret = 0;
+    for (i = arg0->unk0; i != -0x21; i = (arg0 + var_v0)->unk0) {
+        if ((i >> 4) == 1) {
+            ret += 4;
+        } else if (i == 6) {
+            ret += 2;
+        } else if (i == 5) {
+            ret += 1;
+        }
+        var_v0 += 1;
+    }
+    return ret;
+}
 
 s32 func_15002878(void) {
     s32 i;
