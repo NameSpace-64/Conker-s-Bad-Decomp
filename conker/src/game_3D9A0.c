@@ -3,8 +3,11 @@
 #include "variables.h"
 
 
-// ???
-#pragma GLOBAL_ASM("asm/nonmatchings/game_3D9A0/func_150104F0.s")
+void func_150104F0(void) {
+    D_800D9950.unk[0] = D_800D9950.unk[1] = D_800D9950.unk[2] = 0;
+    func_151149AC(0xF6)->unk7C = 2.0f;
+    D_80088980 = 0;
+}
 
 void func_15010538(struct127 *arg0) {
     struct175 tmp;
