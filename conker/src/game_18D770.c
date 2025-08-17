@@ -2,7 +2,6 @@
 #include "functions.h"
 #include "variables.h"
 
-s32 func_151149AC(u32);
 
 struct225 *func_151602C0(Header *header, Header2 *header2, s32 arg2, s32 arg3, s32 arg4, s32 arg5, u8 arg6, u8 arg7, s32 offset, u8 arg9, s32 argA);
 struct225 *func_1516037C(Header *src, struct226 *arg1, s32 size, u8 arg3, s32 arg4);
