@@ -2947,4 +2947,27 @@ typedef struct {
     u8  pad18[0xC];
 } struct260; // size at least 0x24
 
+ typedef struct {
+     f32 unk0;
+     f32 unk4;
+     f32 unk8;
+     u8 padC[0x174];
+ } struct261; // size 0x180
+
+ typedef struct {
+    u32 unk0;
+    s16 unk4;
+    u8 pad6[0x6];
+    s16 unkC;
+ } struct262; //size 0xE
+
+ typedef struct{
+    u8 unk[3];
+    u8 pad3[0x5];
+    s32 unk8;
+    u8 padC[0x70];
+    f32 unk7C;
+    
+}struct263;
+
 #endif
