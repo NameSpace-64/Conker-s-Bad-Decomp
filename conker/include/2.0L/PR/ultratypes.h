@@ -57,6 +57,20 @@ typedef volatile long long		vs64;	/* signed 64-bit */
 typedef float				f32;	/* single prec floating point */
 typedef double				f64;	/* double prec floating point */
 
+typedef s32 ssize_t;
+typedef u32 uintptr_t;
+typedef s32 intptr_t;
+typedef s32 ptrdiff_t;
+
+typedef s8	  int8_t;
+typedef u8	 uint8_t;
+typedef s16	 int16_t;
+typedef u16	uint16_t;
+typedef s32	 int32_t;
+typedef u32	uint32_t;
+typedef s64	 int64_t;
+typedef u64	uint64_t;
+
 #if !defined(_SIZE_T) && !defined(_SIZE_T_) && !defined(_SIZE_T_DEF)
 #define _SIZE_T
 #define _SIZE_T_DEF			/* exeGCC size_t define label */
